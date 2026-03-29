@@ -53,7 +53,7 @@ const Services = () => {
     <div className="pb-24">
       {/* Hero Section */}
       <header className="relative pt-24 pb-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-12 gap-8">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -75,8 +75,8 @@ const Services = () => {
       </header>
 
       {/* Services Grid */}
-      <main className="max-w-7xl mx-auto px-6 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <main className="max-w-7xl mx-auto px-4 md:px-6 pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
             <motion.div 
               key={service.title}
@@ -84,18 +84,18 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/80 backdrop-blur-xl p-8 rounded-[24px] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col group"
+              className="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 flex flex-col group"
             >
-              <div className={`w-14 h-14 rounded-2xl ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                <service.icon className={`${service.textColor} w-6 h-6`} />
+              <div className={`w-16 h-16 rounded-2xl ${service.color} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform`}>
+                <service.icon className={`${service.textColor} w-8 h-8`} />
               </div>
-              <h3 className="text-2xl font-headline font-bold text-on-surface mb-4">{service.title}</h3>
-              <p className="text-on-surface-variant leading-relaxed mb-8 flex-grow">
+              <h3 className="text-2xl md:text-3xl font-headline font-bold text-blue-950 dark:text-white mb-4">{service.title}</h3>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 flex-grow text-lg">
                 {service.description}
               </p>
-              <Link to="/contact" className="flex items-center text-primary font-semibold group/link cursor-pointer">
+              <Link to="/contact" className="flex items-center text-blue-600 font-bold group/link cursor-pointer text-lg">
                 <span className="mr-2">Inquire Now</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+                <ArrowRight className="w-5 h-5 transition-transform group-hover/link:translate-x-1" />
               </Link>
             </motion.div>
           ))}
@@ -103,11 +103,11 @@ const Services = () => {
       </main>
 
       {/* Asymmetric Featured Section */}
-      <section className="py-24 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-12 gap-12 items-center">
-            <div className="col-span-12 lg:col-span-6 relative">
-              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+      <section className="py-32 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-100 dark:border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative order-2 lg:order-1">
+              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800">
                 <img 
                   src="https://picsum.photos/seed/process/800/1000" 
                   alt="Design process" 
@@ -115,31 +115,34 @@ const Services = () => {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute -bottom-8 -right-8 bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-xl max-w-xs hidden md:block">
-                <p className="font-headline font-bold text-primary text-xl mb-1">Human-Centered</p>
-                <p className="text-on-surface-variant text-sm">Every pixel is placed with intention and empathy for the end user.</p>
+              <div className="absolute -bottom-8 -right-8 bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-2xl max-w-xs hidden md:block border border-slate-100 dark:border-slate-800">
+                <p className="font-headline font-black text-blue-600 text-2xl mb-2">Human-Centered</p>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Every pixel is placed with intention and empathy for the end user.</p>
               </div>
             </div>
-            <div className="col-span-12 lg:col-span-5 lg:col-start-8">
-              <h2 className="text-3xl md:text-5xl font-headline font-bold text-on-surface mb-6 leading-tight">My Process is Built on Transparency.</h2>
-              <p className="text-on-surface-variant mb-8 text-lg leading-relaxed">
+            <div className="order-1 lg:order-2">
+              <span className="text-blue-600 font-bold uppercase tracking-[0.3em] text-xs mb-6 block">Our Philosophy</span>
+              <h2 className="text-4xl md:text-6xl font-headline font-bold text-blue-950 dark:text-white mb-8 leading-tight">My Process is Built on <span className="italic">Transparency.</span></h2>
+              <p className="text-slate-600 dark:text-slate-400 mb-10 text-xl leading-relaxed">
                 I don't believe in "black box" development. I work as an extension of your team, providing clear communication and rapid iteration throughout the development lifecycle.
               </p>
-              <ul className="space-y-4 mb-10">
+              <ul className="space-y-6 mb-12">
                 {[
                   'Direct communication with the developer',
                   'Daily progress updates and feedback loops',
                   'Agile and adaptive project management'
                 ].map((item) => (
                   <li key={item} className="flex items-start">
-                    <CheckCircle className="text-primary w-5 h-5 mr-3 mt-1" />
-                    <span className="font-medium">{item}</span>
+                    <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <CheckCircle className="text-blue-600 w-4 h-4" />
+                    </div>
+                    <span className="font-bold text-blue-950 dark:text-white text-lg">{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact" className="px-8 py-4 rounded-full bg-primary text-white font-bold hover:scale-105 transition-transform text-center">Start a Project</Link>
-                <Link to="/process" className="px-8 py-4 rounded-full border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all text-center">Explore Our Process</Link>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Link to="/contact" className="px-10 py-5 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all text-center shadow-xl shadow-blue-500/20">Start a Project</Link>
+                <Link to="/work" className="px-10 py-5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 text-blue-950 dark:text-white font-bold hover:bg-slate-50 dark:hover:bg-slate-900 transition-all text-center">View Portfolio</Link>
               </div>
             </div>
           </div>

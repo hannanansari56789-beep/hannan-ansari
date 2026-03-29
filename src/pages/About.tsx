@@ -19,10 +19,10 @@ const About = () => {
               My Journey
             </span>
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight text-blue-900 dark:text-white mb-8 font-headline leading-[1.1]">
-              Engineering the Web with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500 italic">Technical Excellence</span>
+              Engineering the Web with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500 italic text-blue-600">Hannan Ansari</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
-              I am a Full Stack Web Developer passionate about building scalable, high-performance applications. My mission is to bridge the gap between complex backend logic and intuitive frontend experiences.
+              I am Hannan Ansari, a Full Stack Web Developer based in Moradabad. I specialize in building high-performance, scalable web applications using modern technologies like React, Node.js, and PostgreSQL. My goal is to deliver digital solutions that are not only functional but also provide an exceptional user experience.
             </p>
           </motion.div>
         </div>
@@ -98,8 +98,8 @@ const About = () => {
             className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl"
           >
             <img 
-              src="https://picsum.photos/seed/developer-workspace/1000/1000" 
-              alt="My Workspace" 
+              src="https://picsum.photos/seed/hannan-ansari/1000/1000" 
+              alt="Hannan Ansari" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />

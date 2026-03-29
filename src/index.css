@@ -66,6 +66,14 @@
   }
 }
 
+.text-glow {
+  text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+.glass-card {
+  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-white/20 dark:border-slate-800/20;
+}
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
